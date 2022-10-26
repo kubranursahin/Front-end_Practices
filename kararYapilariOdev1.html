@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+    <title>Kodluyoruz Javascript Ödevi - Karar Yapıları</title>
+</head>
+<style>
+    body {
+        background-color: rgb(56, 55, 55);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+    }
+
+    .container span {
+        font-size: 50px;
+        color: #e98208;
+    }
+
+    .container p {
+        font-size: 40px;
+        color: #e98208;
+        text-align: center;
+    }
+
+    .container #hours {
+        font-size: 60px;
+        color: #e98208;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <img src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png"
+            alt="" class="rounded" />
+        <span>Merhaba <span id="name"></span> Hoş Geldin</span>
+        <h2 id="hours"></h2>
+        <p>tarihinde Kodluyoruz <b> Frontend Web development patikası</b>'nın JavaScript bölümü 1.ödevindesiniz</p>
+    </div>
+    <script>
+        let isim = document.querySelector("#name"),
+            days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]
+        isim.innerHTML = prompt("Adınızı giriniz")
+
+        function control(i) {
+            if (i < 10) {
+                i = "0" + i
+            }
+            return i
+        }
+
+
+
+        function time() {
+            let date = new Date(),
+                day = days[date.getDay()],
+
+                hours = date.getHours(),
+                minute = date.getMinutes(),
+                second = date.getSeconds();
+            hours = control(hours),
+                minute = control(minute),
+                second = control(second),
+
+                hoursDom = document.querySelector("#hours").innerHTML = hours + ":" + minute + ":" + second + " " + day;
+        }
+        setInterval(time, 1000)
+    </script>
+</body>
+</html>
