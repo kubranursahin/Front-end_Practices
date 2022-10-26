@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <form style="text-align: center;">
+    SAYI 1 : <input type="number" name="t1" id="s1"><br> <br />
+    SAYI 2 : <input type="number" name="t2" id="s2"><br /> <br />
+    <input type="text" id="sonuc">
+    <input type="button" id="topla" value="TOPLA">
+    <input type="button" id="carp" value="ÇARP">
+    <input type="button" id="bol" value="BÖL">
+    <input type="button" id="cikar" value="ÇIKAR">
+
+
+  </form>
+  <script type="text/javascript">
+
+
+    $("#topla").on("click", function () {
+      var sayi1 = Number($("#s1").val());
+      var sayi2 = Number($("#s2").val());
+      var toplam = sayi1 + sayi2;
+      $("#sonuc").val(toplam);
+    });
+    $("#cikar").on("click", function () {
+      var sayi1 = Number($("#s1").val());
+      var sayi2 = Number($("#s2").val());
+      var fark = sayi1 - sayi2;
+      $("#sonuc").val(fark);
+    });
+    $("#carp").on("click", function () {
+      var sayi1 = Number($("#s1").val());
+      var sayi2 = Number($("#s2").val());
+      var carpim = sayi1 * sayi2;
+      $("#sonuc").val(carpim);
+    });
+    $("#bol").on("click", function () {
+      var sayi1 = Number($("#s1").val());
+      var sayi2 = Number($("#s2").val());
+      var bolum = sayi1 / sayi2;
+      $("#sonuc").val(bolum);
+    });
+
+  </script>
+</body>
+
+</html>

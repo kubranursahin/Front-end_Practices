@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tasarim Kodlama</title>
+</head>
+ 
+<body>
+	Okudum, Onaylıyorum <input type="checkbox" id="check1" class="onay"  value="Onay" checked><br>
+	<button type="button" id="kontrol">Kontrol Et.</button>
+	
+	
+	<script>
+		var onaylar=document.querySelectorAll(".onay"); 
+		var kontrol=document.querySelector("#kontrol");
+		
+		kontrol.onclick=function(){
+			
+			onaylar.forEach(function(element){
+				
+				if(element.checked==true)
+				{
+					window.alert("Onaylandı");
+				}
+                else{
+                    window.alert("Onaylanmadı");
+                }
+				
+			});
+		}
+	</script>
+</body>
+</html>
+ 

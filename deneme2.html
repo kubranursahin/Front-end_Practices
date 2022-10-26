@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>algoritmaornekleri.com</title>
+</head>
+
+<body>
+	<h2>Yazılı Ortalaması Hesapla</h2>
+	<input placeholder="1. Yazılıyı Girin" type="text" id="txtY1">
+	<input placeholder="2. Yazılıyı Girin" type="text" id="txtY2">
+	<button id="btn">HESAPLA</button>
+	<div id="sonucOrtalama"></div>
+	<div id="sonucDurum"></div>
+	
+	<script>
+		function Hesapla()
+		{
+			var durum="";
+			var y1=Number(document.getElementById("txtY1").value);
+			var y2=Number(document.getElementById("txtY2").value);
+			var ortalama=(y1+y2)/2;
+			if(ortalama>=50)
+				{
+					durum="Geçti";
+				}
+			else
+				{
+					durum="Kaldı";
+				}
+			document.getElementById("sonucOrtalama").innerHTML="Ortalama : "+ortalama;
+			document.getElementById("sonucDurum").innerHTML="Durum : "+durum;
+		}
+		
+		var hesapBtn=document.getElementById("btn");
+		hesapBtn.onclick=Hesapla;
+		
+	</script>
+	
+</body>
+</html>

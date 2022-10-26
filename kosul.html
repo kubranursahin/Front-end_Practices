@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validator</title>
+</head>
+
+<body>
+    <!--2 input 1 ad bir yaş bir buton bir label ad ve yaş bilgisi alınacak 18'den büyükse ehliyet alabilir 18den küçükse ehliyet alamaz-->
+    <div id="hesapMakinesi">
+        <div id="ekran">
+            <input placeholder="Adınızı Girin" type="text" id="txtName" value="">
+            <input placeholder="Yaşınızı Girin" type="number" id="nbrAge" value="">
+            <input type="button" name="button" id="hesap" value="HESAPLA">
+            <p><label id="lblSonuc"></label>&nbsp;</p>
+        </div>
+
+        <script>
+
+
+            var ad=document.getElementById("txtName");
+            var yas = document.getElementById("nbrAge");
+            var btnHesap = document.getElementById("hesap");
+            var _sonuc = document.getElementById("lblSonuc");
+           btnHesap.onclick = function islem() {
+                sonuc ="";
+                // console.log(ad), "ad degeri";
+                // console.log(yas, "yaş değeri");
+                ad = txtName.value;
+                yas = parseInt(nbrAge.value);
+
+                if (yas >= 18) {
+                   
+                    sonuc ="Ehliyet Alabilirsiniz.";
+                }
+                else {
+                    sonuc ="Ehliyet Alamazsınız.";
+                }
+            document.getElementById("lblSonuc").innerHTML = "Durum: "+ ad + " "+ sonuc;
+            }
+
+            var hesapBtn = document.getElementById("btn");
+        </script>
+</body>
+
+</html>

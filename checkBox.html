@@ -1,0 +1,36 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tasarim Kodlama</title>
+</head>
+
+<body>
+	<input type="checkbox" id="check" class="check"  value="check" text="" aria-checked="false">Okudum, Onaylıyorum.<br>
+    &nbsp;<button type="button" id="control">Kontrol Et </button> <br>
+        <p><label id="lblSonuc"></label>&nbsp;</p>
+
+	
+	<script>
+		var check=document.querySelectorAll("check"); //class adı ile uyuşan tüm nesneler
+		var control=document.querySelector("control");//id ile uyuşan tek nesne
+		
+		control.onclick=function(){
+			sonuc="";
+			
+				if(element.checked==true)
+				{
+                    sonuc="Onaylandı";
+                }
+                else{
+                   sonuc="Onaylanmadı";
+                }
+				
+			};
+            document.getElementById("lblSonuc").innerHTML = sonuc;
+
+        
+	</script>
+</body>
+</html>
